@@ -9,33 +9,53 @@
   <body>
     <h1>Expense Tracker Web</h1>
     <main>
-      <header>
+      <header id="first">
         <div>
-          <h4>Total Balance</h4>
+          <h5>Total Balance</h5>
           <span id="balance">Rs 0.0</span>
         </div>
         <div>
-          <h4>Income</h4>
+          <h5>Income</h5>
           <span id="income">Rs 0.0</span>
         </div>
         <div>
-          <h4>Expense</h4>
+          <h5>Expense</h5>
           <span id="expense">Rs 0.0</span>
         </div>
       </header>
-      <section>
+      <section id="second">
         <h2>Add Transactions</h2>
         <form id="transactionForm">
-          <label for="type">
-            <input type="checkbox" name="type" id="type" />
-            <div class="options">
-              <span>Expense</span>
-              <span>Income</span>
+            <div>
+                <label for="type">
+                    <input type="checkbox" name="type" id="type" />
+                    <div class="option">
+                        <span>Expense</span>
+                        <span>Income</span>
+                    </div>
+                </label>
             </div>
-          </label>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="amount">Amount</label>
+                <input type="number" value="0" min="1" step="1" name="amount" id="amount" required>
+            </div>
+            <div>
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+            <button type="submit">Submit</button>
         </form>
       </section>
-      <section></section>
+      <section id="third">
+        <h2>Transaction History</h2>
+        <ul id="transactionList"></ul>
+        <div id="status"></div>
+      </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
